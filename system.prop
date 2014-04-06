@@ -4,19 +4,19 @@
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
 ro.telephony.ril_class=LGEQualcommUiccRIL
-ro.telephony.ril.v3=qcomuiccstack
+ro.telephony.ril.v3=subscriptionFromSource,skipCdmaSubcription
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 ro.baseband.arch=msm
 ro.config.lte=true
-ro.telephony.default_network=10
+ro.telephony.default_network=0
 telephony.lteOnCdmaDevice=1
-telephony.lteOnGsmDevice=1
-ro.ril.shutdown=true
-ro.ril.hsxpa=1
-ro.ril.gprsclass=10
-ro.config.ehrpd=true
-ro.config.svlte1x=true
-ro.cdma.subscribe_on_ruim_ready=true
+#telephony.lteOnGsmDevice=0
+#ro.ril.shutdown=true
+#ro.ril.hsxpa=1
+#ro.ril.gprsclass=10
+#ro.config.ehrpd=true
+#ro.config.svlte1x=true
+#ro.cdma.subscribe_on_ruim_ready=true
 
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
@@ -107,8 +107,12 @@ ro.config.vc_call_vol_default=5
 ro.hdmi.enable=true
 com.qc.hardware=true
 com.qc.hdmi_out=true
-wlan.chip.vendor=qcom
-wlan.chip.version=wcnss
+
+#wifi
+wlan.chip.vendor=brcm
+wlan.chip.version=bcm4334
+wifi.supplicant_scan_interval=20
+
 #lpa.decode=true
 
 wifi.interface=wlan0

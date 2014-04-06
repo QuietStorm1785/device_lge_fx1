@@ -69,7 +69,7 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 
 WIFI_DRIVER_MODULE_NAME          := wlan
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
+#WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 
 # cat /proc/emmc
 #dev:        size     erasesize name

@@ -24,100 +24,95 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/fx1/overlay
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/init.lge_dut.bt.sh:/system/etc/init.lge_dut.bt.sh \
-    device/lge/fx1/configs/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
-    device/lge/fx1/configs/init.qcom.coex.sh:/system/etc/init.qcom.coex.sh \
-    device/lge/fx1/configs/init.qcom.fm.sh:/system/etc/init.qcom.fm.sh \
-    device/lge/fx1/configs/init.qcom.ftm_module.sh:/system/etc/init.qcom.ftm_module.sh \
-    device/lge/fx1/configs/init.qcom.ftm_module_out.sh:/system/etc/init.qcom.ftm_module_out.sh \
-    device/lge/fx1/configs/init.qcom.mdm_links.sh:/system/etc/init.qcom.mdm_links.sh \
-    device/lge/fx1/configs/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
-    device/lge/fx1/configs/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
-    device/lge/fx1/configs/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
-    device/lge/fx1/configs/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh \
-    device/lge/fx1/configs/init.wlan-on-off.sh:/system/etc/init.wlan-on-off.sh
+    device/lge/fx1/prebuilts/etc/init.goldfish.sh:/system/etc/init.goldfish.sh \
+    device/lge/fx1/prebuilts/etc/init.lge_dut.bt.sh:/system/etc/init.lge_dut.bt.sh \
+    device/lge/fx1/prebuilts/etc/init.qcom.modem_links.sh:/system/etc/init.qcom.modem_links.sh \
+    device/lge/fx1/prebuilts/etc/init.qcom.modem_links_1.sh:/system/etc/init.qcom.modem_links_1.sh \
+    device/lge/fx1/prebuilts/etc/init.qcom.post_fs.sh:/system/etc/init.qcom.post_fs.sh 
 
-# MSM8960 firmware
-PRODUCT_COPY_FILES += \
-    device/lge/fx1/firmware/cyttsp_8960_cdp.hex:/system/etc/firmware/cyttsp_8960_cdp.hex \
-    device/lge/fx1/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw
 
 # GPS config
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_AS:system/etc/gps.conf
 
 # Media config
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/lge/fx1/prebuilts/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # vold config
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/vold.fstab:system/etc/vold.fstab
+    device/lge/fx1/prebuilts/etc/vold.fstab:system/etc/vold.fstab
 
 # thermald config
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/thermald.conf:/system/etc/thermald.conf
+    device/lge/fx1/prebuilts/etc/thermald.conf:/system/etc/thermald.conf
 
 # snd_soc_msm
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/dsp/snd_soc_msm/DL_REC:/system/etc/snd_soc_msm/DL_REC \
-    device/lge/fx1/dsp/snd_soc_msm/DL_REC_2x:/system/etc/snd_soc_msm/DL_REC_2x \
-    device/lge/fx1/dsp/snd_soc_msm/FM_A2DP_REC:/system/etc/snd_soc_msm/FM_A2DP_REC \
-    device/lge/fx1/dsp/snd_soc_msm/FM_A2DP_REC_2x:/system/etc/snd_soc_msm/FM_A2DP_REC_2x \
-    device/lge/fx1/dsp/snd_soc_msm/FM_Digital_Radio:/system/etc/snd_soc_msm/FM_Digital_Radio \
-    device/lge/fx1/dsp/snd_soc_msm/FM_Digital_Radio_2x:/system/etc/snd_soc_msm/FM_Digital_Radio_2x \
-    device/lge/fx1/dsp/snd_soc_msm/FM_REC:/system/etc/snd_soc_msm/FM_REC \
-    device/lge/fx1/dsp/snd_soc_msm/FM_REC_2x:/system/etc/snd_soc_msm/FM_REC_2x \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi:/system/etc/snd_soc_msm/HiFi \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi_2x:/system/etc/snd_soc_msm/HiFi_2x \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi_Low_Power:/system/etc/snd_soc_msm/HiFi_Low_Power \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi_Low_Power_2x:/system/etc/snd_soc_msm/HiFi_Low_Power_2x \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi_Rec:/system/etc/snd_soc_msm/HiFi_Rec \
-    device/lge/fx1/dsp/snd_soc_msm/HiFi_Rec_2x:/system/etc/snd_soc_msm/HiFi_Rec_2x \
-    device/lge/fx1/dsp/snd_soc_msm/snd_soc_msm:/system/etc/snd_soc_msm/snd_soc_msm \
-    device/lge/fx1/dsp/snd_soc_msm/snd_soc_msm_2x:/system/etc/snd_soc_msm/snd_soc_msm_2x \
-    device/lge/fx1/dsp/snd_soc_msm/UL_DL_REC:/system/etc/snd_soc_msm/UL_DL_REC \
-    device/lge/fx1/dsp/snd_soc_msm/UL_DL_REC_2x:/system/etc/snd_soc_msm/UL_DL_REC_2x \
-    device/lge/fx1/dsp/snd_soc_msm/Voice_Call:/system/etc/snd_soc_msm/Voice_Call \
-    device/lge/fx1/dsp/snd_soc_msm/Voice_Call_2x:/system/etc/snd_soc_msm/Voice_Call_2x \
-    device/lge/fx1/dsp/snd_soc_msm/Voice_Call_IP:/system/etc/snd_soc_msm/Voice_Call_IP \
-    device/lge/fx1/dsp/snd_soc_msm/Voice_Call_IP_2x:/system/etc/snd_soc_msm/Voice_Call_IP_2x
+    device/lge/fx1/prebuilts/etc/snd_soc_msm/snd_soc_msm_Sitar:/system/etc/snd_soc_msm/snd_soc_msm_Sitar \
+    device/lge/fx1/prebuilts/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3:/system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+    device/lge/fx1/prebuilts/etc/snd_soc_msm/snd_soc_msm_2x:/system/etc/snd_soc_msm/snd_soc_msm_2x \
+    device/lge/fx1/prebuilts/etc/snd_soc_msm/snd_soc_msm:/system/etc/snd_soc_msm/snd_soc_msm 
 
 # Sound effects
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/audio_effects.conf:system/etc/audio_effects.conf
-
+    device/lge/fx1/prebuilts/etc/audio_effects.conf:system/etc/audio_effects.conf \
+    device/lge/fx1/prebuilts/etc/audio_policy.conf:system/etc/audio_policy.conf
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/keylayout/MHLRCP.kl:system/usr/keylayout/MHLRCP.kl \
-    device/lge/fx1/keylayout/d1lu-keypad.kl:system/usr/keylayout/d1lu-keypad.kl \
-    device/lge/fx1/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-    device/lge/fx1/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
-    device/lge/fx1/keylayout/osp-input.kl:system/usr/keylayout/osp-input.kl
+    device/lge/fx1/prebuilts/usr/keylayout/MHLRCP.kl:system/usr/keylayout/MHLRCP.kl \
+    device/lge/fx1/prebuilts/usr/keylayout/d1lu-keypad.kl:system/usr/keylayout/d1lu-keypad.kl \
+    device/lge/fx1/prebuilts/usr/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+    device/lge/fx1/prebuilts/usr/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
+    device/lge/fx1/prebuilts/usr/keylayout/osp-input.kl:system/usr/keylayout/osp-input.kl
 
 # Input device config
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/idc/keypad-8960.idc:system/usr/idc/keypad-8960.idc \
-    device/lge/fx1/idc/melfas-ts.idc:system/usr/idc/melfas-ts.idc \
-    device/lge/fx1/idc/osp-input.idc:system/usr/idc/osp-input.idc
+    device/lge/fx1/prebuilts/usr/idc/keypad-8960.idc:system/usr/idc/keypad-8960.idc \
+    device/lge/fx1/prebuilts/usr/idc/melfas-ts.idc:system/usr/idc/melfas-ts.idc \
+    device/lge/fx1/prebuilts/usr/idc/osp-input.idc:system/usr/idc/osp-input.idc
 
 # Wifi firmware
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/firmware/WCNSS_cfg.dat:/system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/lge/fx1/firmware/WCNSS_qcom_cfg.ini:/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/lge/fx1/firmware/WCNSS_qcom_wlan_nv.bin:/system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    device/lge/fx1/prebuilts/etc/firmware/a225p5_pm4.fw:/system/etc/firmware/a225p5_pm4.fw \
+    device/lge/fx1/prebuilts/etc/firmware/a225_pfp.fw:/system/etc/firmware/a225_pfp.fw \
+    device/lge/fx1/prebuilts/etc/firmware/a225_pm4.fw:/system/etc/firmware/a225_pm4.fw \
+    device/lge/fx1/prebuilts/etc/firmware/a300_pfp.fw:/system/etc/firmware/a300_pfp.fw \
+    device/lge/fx1/prebuilts/etc/firmware/a300_pm4.fw:/system/etc/firmware/a300_pm4.fw \
+    device/lge/fx1/prebuilts/etc/firmware/fw_bcmdhd.bin:/system/etc/firmware/fw_bcmdhd.bin \
+    device/lge/fx1/prebuilts/etc/firmware/fw_bcmdhd_apsta.bin:/system/etc/firmware/fw_bcmdhd_apsta.bin \
+    device/lge/fx1/prebuilts/etc/firmware/fw_bcmdhd_mfg.bin:/system/etc/firmware/fw_bcmdhd_mfg.bin \
+    device/lge/fx1/prebuilts/etc/firmware/fw_bcmdhd_p2p.bin:/system/etc/firmware/fw_bcmdhd_p2p.bin \
+    device/lge/fx1/prebuilts/etc/firmware/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \
+    device/lge/fx1/prebuilts/etc/firmware/leia_pm4_470.fw:/system/etc/firmware/leia_pm4_470.fw \
+    device/lge/fx1/prebuilts/etc/firmware/vidc.b00:/system/etc/firmware/vidc.b00 \
+    device/lge/fx1/prebuilts/etc/firmware/vidc.b01:/system/etc/firmware/vidc.b01 \
+    device/lge/fx1/prebuilts/etc/firmware/vidc.b02:/system/etc/firmware/vidc.b02 \
+    device/lge/fx1/prebuilts/etc/firmware/vidc.b03:/system/etc/firmware/vidc.b03 \
+    device/lge/fx1/prebuilts/etc/firmware/vidc.mdt:/system/etc/firmware/vidc.mdt \
+    device/lge/fx1/prebuilts/etc/firmware/vidc_1080p.fw:/system/etc/firmware/vidc_1080p.fw \
+    device/lge/fx1/prebuilts/etc/firmware/vidcfw.elf:/system/etc/firmware/vidcfw.elf 
 
 # Wifi config
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf
+    device/lge/fx1/prebuilts/etc/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
+    device/lge/fx1/prebuilts/etc/wifi/bcmdhd.cal:/system/etc/wifi/bcmdhd.cal \
+    device/lge/fx1/prebuilts/etc/wifi/p2p_supplicant.conf:/system/etc/wifi/p2p_supplicant.conf
+
+# DNS hooks
+PRODUCT_COPY_FILES += \
+    device/lge/fx1/prebuilts/etc/dhcpcd/dhcpcd-hooks/20-dns.conf:/system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf \
+    device/lge/fx1/prebuilts/etc/dhcpcd/dhcpcd-hooks/95-configured:/system/etc/dhcpcd/dhcpcd-hooks/95-configured
+
+
 
 # Video (Temp)
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/prebuilt/libOmxVdec.so:/obj/lib/libOmxVdec.so \
-    device/lge/fx1/prebuilt/libOmxVdec.so:/system/lib/libOmxVdec.so
+    device/lge/fx1/prebuilts/lib/libOmxVdec.so:/obj/lib/libOmxVdec.so \
+    device/lge/fx1/prebuilts/lib/libOmxVdec.so:/system/lib/libOmxVdec.so
 
 # NFCEE access control
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+    device/lge/fx1/prebuilts/etc/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -135,10 +130,33 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hostapd
 
+
 # Kernel modules
 PRODUCT_COPY_FILES += \
-    device/lge/fx1/modules/wlan.ko:/system/lib/modules/wlan.ko \
-    device/lge/fx1/modules/mwlan_aarp.ko:/system/lib/modules/mwlan_aarp.ko
+    device/lge/fx1/prebuilts/lib/modules/ansi_cprng.ko:/system/lib/modules/ansi_cprng.ko \
+    device/lge/fx1/prebuilts/lib/modules/bluetooth-power.ko:/system/lib/modules/bluetooth-power.ko \
+    device/lge/fx1/prebuilts/lib/modules/dma_test.ko:/system/lib/modules/dma_test.ko \
+    device/lge/fx1/prebuilts/lib/modules/eeprom_93cx6.ko:/system/lib/modules/eeprom_93cx6.ko \
+    device/lge/fx1/prebuilts/lib/modules/evbug.ko:/system/lib/modules/evbug.ko \
+    device/lge/fx1/prebuilts/lib/modules/gspca_main.ko:/system/lib/modules/gspca_main.ko \
+    device/lge/fx1/prebuilts/lib/modules/ks8851.ko:/system/lib/modules/ks8851.ko \
+    device/lge/fx1/prebuilts/lib/modules/lcd.ko:/system/lib/modules/lcd.ko \
+    device/lge/fx1/prebuilts/lib/modules/mcdrvmodule.ko:/system/lib/modules/mcdrvmodule.ko \
+    device/lge/fx1/prebuilts/lib/modules/mckernelapi.ko:/system/lib/modules/mckernelapi.ko \
+    device/lge/fx1/prebuilts/lib/modules/mmc_block_test.ko:/system/lib/modules/mmc_block_test.ko \
+    device/lge/fx1/prebuilts/lib/modules/mmc_test.ko:/system/lib/modules/mmc_test.ko \
+    device/lge/fx1/prebuilts/lib/modules/msm-buspm-dev.ko:/system/lib/modules/msm-buspm-dev.ko \
+    device/lge/fx1/prebuilts/lib/modules/qce40.ko:/system/lib/modules/qce40.ko \
+    device/lge/fx1/prebuilts/lib/modules/qcedev.ko:/system/lib/modules/qcedev.ko \
+    device/lge/fx1/prebuilts/lib/modules/qcrypto.ko:/system/lib/modules/qcrypto.ko \
+    device/lge/fx1/prebuilts/lib/modules/radio-iris-transport.ko:/system/lib/modules/radio-iris-transport.ko \
+    device/lge/fx1/prebuilts/lib/modules/reset_modem.ko:/system/lib/modules/reset_modem.ko \
+    device/lge/fx1/prebuilts/lib/modules/scsi_wait_scan.ko:/system/lib/modules/scsi_wait_scan.ko \
+    device/lge/fx1/prebuilts/lib/modules/spidev.ko:/system/lib/modules/spidev.ko \
+    device/lge/fx1/prebuilts/lib/modules/tcp_htcp.ko:/system/lib/modules/tcp_htcp.ko \
+    device/lge/fx1/prebuilts/lib/modules/tcp_westwood.ko:/system/lib/modules/tcp_westwood.ko \
+    device/lge/fx1/prebuilts/lib/modules/test-iosched.ko:/system/lib/modules/test-iosched.ko \
+
 
 # 2nd-init
 PRODUCT_COPY_FILES += \

@@ -114,10 +114,6 @@ lib/libami306.so
 # Bluetooth
 lib/liblgftmitem.so
 
-# Wifi
-lib/modules/mwlan_aarp.ko
-lib/modules/wlan.ko
-
 # Light
 lib/hw/lights.msm8960.so
 
@@ -131,4 +127,4 @@ lib/hw/nfc.msm8960.so
 
 #Chevanlol360 addtions
 lib/libmmcamera_statsproc31.so
-libchromatix_imx111_video_default.so
+lib/libchromatix_imx111_video_default.so

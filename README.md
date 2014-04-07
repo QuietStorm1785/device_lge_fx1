@@ -14,6 +14,7 @@ Working:
 * Audio
 * Wifi
 * ADB
+* Ril
 
 Known issues:
 * Might reboot to "HW Reset Was Detected" screen, just pull battery and reboot

@@ -14,7 +14,7 @@ Working:
 * Audio
 * Wifi
 * ADB
-* Ril 1x & 3G works if you remove your icc card
+* Ril 1x & 3G works when it wants to, have to play around with preferred network mode settings
 * GPS
 * NFC??? it turns on.
 

@@ -24,7 +24,7 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-#COMMON_GLOBAL_CFLAGS += -DLG870 -DLG870
+COMMON_GLOBAL_CFLAGS += -DLG870 -DLG870
 
 # inherit from common msm8960
 -include device/lge/msm8960-common/BoardConfigCommon.mk

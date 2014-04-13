@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
     device/lge/fx1/prebuilts/usr/idc/melfas-ts.idc:system/usr/idc/melfas-ts.idc \
     device/lge/fx1/prebuilts/usr/idc/osp-input.idc:system/usr/idc/osp-input.idc
 
-# Wifi firmware
+# Wifi firmware & Jellybean Adreno firmware
 PRODUCT_COPY_FILES += \
     device/lge/fx1/prebuilts/etc/firmware/a225p5_pm4.fw:/system/etc/firmware/a225p5_pm4.fw \
     device/lge/fx1/prebuilts/etc/firmware/a225_pfp.fw:/system/etc/firmware/a225_pfp.fw \
@@ -170,11 +170,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
 
+# OTA & Stat Info
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.developerid=chevanlol360 \
+	ro.goo.rom=cyanogenmodSequent \
+        ro.romstats.url=http://androidnexus.us/stats/statschev/submit.php \
+        ro.romstats.name=CyanogenMod10 \
+        ro.romstats.tframe=7 \
+        ro.romstats.version=$(shell date +%Y%m%d ) \
+	ro.goo.version=$(shell date +%Y%m%d )
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/app/RomStats.apk:system/app/RomStats.apk \
+    $(LOCAL_PATH)/prebuilts/app/com.s0up.goomanager-1.apk:system/app/com.s0up.goomanager-1.apk
+
+
 # We have enough space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Set build date
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0 
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi

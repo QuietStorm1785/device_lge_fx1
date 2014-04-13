@@ -3,20 +3,26 @@
 #
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-ro.telephony.ril_class=LGEQualcommUiccRIL
+ro.telephony.ril_class=QualcommSharedRIL
 ro.telephony.ril.v3=qcomdsds,subscriptionFromSource,skipCdmaSubcription,icccardstatus,qcomuiccstack
 ro.vendor.extension_library=/system/lib/libqc-opt.so
 ro.baseband.arch=msm
-ro.config.lte=true
+#ro.config.lte=true
 ro.telephony.default_network=9
 telephony.lteOnCdmaDevice=1
 #telephony.lteOnGsmDevice=0
-#ro.ril.shutdown=true
+ro.ril.shutdown=true
 #ro.ril.hsxpa=1
 #ro.ril.gprsclass=10
-#ro.config.ehrpd=true
+ro.config.ehrpd=true
 #ro.config.svlte1x=true
-#ro.cdma.subscribe_on_ruim_ready=true
+ro.cdma.subscribe_on_ruim_ready=true
+
+ro.cdma.home.operator.alpha=Chameleon
+ro.cdma.home.operator.numeric=310000
+ro.com.google.clientidbase.yt=android-sprint-mvno-us
+ro.com.google.clientidbase.am=android-sprint-mvno-us
+ro.com.google.clientidbase.ms=android-sprint-mvno-us
 
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
@@ -101,7 +107,7 @@ ro.ril.transmitpower=true
 
 ro.hwui.text_cache_width=2048
 ro.nfc.port=I2C
-persist.data_netmgrd_mtu=1428
+persist.data_netmgrd_mtu=1422
 ro.config.vc_call_vol_steps=9
 ro.config.vc_call_vol_default=5
 ro.hdmi.enable=true

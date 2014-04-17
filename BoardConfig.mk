@@ -27,7 +27,7 @@
 COMMON_GLOBAL_CFLAGS += -DLG870 -DLG870
 
 # inherit from common msm8960
--include device/lge/msm8960-common/BoardConfigCommon.mk
+-include device/lge/msm8960-common2/BoardConfigCommon.mk
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := device/lge/fx1/include
@@ -39,18 +39,16 @@ TARGET_BOOTLOADER_BOARD_NAME := FX1
 TARGET_CUSTOM_BLUEDROID := ../../../device/lge/fx1/bluetooth/bluetooth.c
 
 # Kernel
+TARGET_ARCH := arm
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=fx1s lpj=67667
-BOARD_FORCE_RAMDISK_ADDRESS := 0x82200000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x81500000
 
 
-# Fake kernel
-TARGET_PREBUILT_KERNEL := device/lge/fx1/kernel
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
+#Kernel source
+TARGET_KERNEL_SOURCE := kernel/lge/fx1
+TARGET_KERNEL_CONFIG := 1chaos_defconfig
 
 # QCOM GPS
 #BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
@@ -59,38 +57,21 @@ PRODUCT_COPY_FILES += \
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
 
-# Wifi
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_WLAN_DEVICE                := qcwcn
-WIFI_DRIVER_FW_PATH_STA          := "sta"
-WIFI_DRIVER_FW_PATH_AP           := "ap"
-WIFI_DRIVER_FW_PATH_P2P          := "p2p"
+
+
+
+# Wifi related defines
+WIFI_BAND := 802_11_ABG
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
+
 
 WIFI_DRIVER_MODULE_NAME          := wlan
 #WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
-
-# cat /proc/emmc
-#dev:        size     erasesize name
-#mmcblk0p23: 000ffa00 00000200 "misc"
-#mmcblk0p22: 00fffe00 00000200 "recovery"
-#mmcblk0p21: 01000000 00000200 "boot"
-#mmcblk0p33: 67fffc00 00000200 "system"
-#mmcblk0p30: 00140200 00000200 "local"
-#mmcblk0p34: 0ffffe00 00000200 "cache"
-#mmcblk0p35: 97fffe00 00000200 "userdata"
-#mmcblk0p26: 01400000 00000200 "devlog"
-#mmcblk0p28: 00040000 00000200 "pdata"
-#mmcblk0p36: 27be00000 00000200 "fat"
-#mmcblk0p31: 00010000 00000200 "extra"
-#mmcblk0p17: 02d00000 00000200 "radio"
-#mmcblk0p18: 00a00000 00000200 "adsp"
-#mmcblk0p16: 00100000 00000200 "dsps"
-#mmcblk0p19: 00500000 00000200 "wcnss"
-#mmcblk0p20: 007ffa00 00000200 "radio_config"
-#mmcblk0p24: 00400000 00000200 "modem_st1"
-#mmcblk0p25: 00400000 00000200 "modem_st2"
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

@@ -18,7 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # common msm8960 configs
-$(call inherit-product, device/lge/msm8960-common/msm8960.mk)
+$(call inherit-product, device/lge/msm8960-common2/msm8960.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/fx1/overlay
 
@@ -129,7 +129,6 @@ PRODUCT_PACKAGES += \
 # hostapd
 PRODUCT_PACKAGES += \
     hostapd
-
 
 # Kernel modules
 PRODUCT_COPY_FILES += \

@@ -19,7 +19,7 @@ TARGET_ARCH := arm
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=fx1s lpj=67667
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x81500000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x82200000
 
 
 #Kernel source

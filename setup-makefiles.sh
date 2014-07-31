@@ -1,5 +1,5 @@
 VENDOR=lge
-DEVICE=fx1
+DEVICE=fx1s
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

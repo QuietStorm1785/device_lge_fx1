@@ -6,25 +6,30 @@ USE_CAMERA_STUB := TRUE
 -include device/lge/msm8960-common/BoardConfigCommon.mk
 
 # Include path
-TARGET_SPECIFIC_HEADER_PATH := device/lge/fx1/include
+TARGET_SPECIFIC_HEADER_PATH := device/lge/fx1s/include
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := FX1
+TARGET_BOOTLOADER_BOARD_NAME := fx1s
+TARGET_NO_BOOTLOADER := true
+TARGET_PRODUCT := fx1s
+BOARD_VENDOR := LGE
 
 # Bluetooth
-TARGET_CUSTOM_BLUEDROID := ../../../device/lge/fx1/bluetooth/bluetooth.c
+TARGET_CUSTOM_BLUEDROID := ../../../device/lge/fx1s/bluetooth/bluetooth.c
 
 # Kernel
 TARGET_ARCH := arm
-BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=fx1s lpj=67667
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x82200000
+BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
+BOARD_KERNEL_BASE            := 0x80200000
+BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
+TARGET_NO_INITLOGO := true
 
 
 #Kernel source
-TARGET_KERNEL_SOURCE := kernel/lge/fx1
+TARGET_KERNEL_SOURCE := kernel/lge/fx1s
 TARGET_KERNEL_CONFIG := cyanogenmod_fx1_defconfig
+
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-linaro-4.6.2
 TARGET_KERNEL_CUSTOM_TOOLCHAIN_SUFFIX := arm-eabi
 
@@ -32,7 +37,7 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN_SUFFIX := arm-eabi
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := fx1
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := fx1s
 
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
@@ -71,3 +76,7 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
 ENABLE_LOKI_RECOVERY := true
 TARGET_OTA_ASSERT_DEVICE := fx1,fx1s
+#Philz edits
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+BRIGHTNESS_SYS_FILE := "/sys/class/leds/lcd-backlight/brightness"
